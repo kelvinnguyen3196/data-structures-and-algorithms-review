@@ -13,6 +13,7 @@
             // big O same, but slightly better than solution 1 b/c only one pass
 
 // const arr = [501, 39, 4, 1, 0, -1];
+
 const arr = [];
 for(let i = 0; i < 10; i++) {
     arr.push(Math.floor(Math.random() * 100) - 50);
