@@ -6,7 +6,7 @@
 1     4
 */
 const graph = [];
-let vertices = 5;
+const vertices = 5;
 // #region inital adjacency matrix set up
 for(let i = 0; i < vertices; i++) {
     graph.push(new Array(vertices).fill(0));
@@ -21,6 +21,7 @@ graph[2][1] = 1;
 graph[2][4] = 1;
 graph[3][0] = 1;
 graph[4][2] = 1;
+const Stack = require('../../../data-structures/stack.js');
 // #endregion
 
 const printResult = (vertices, visited) => {
@@ -36,24 +37,26 @@ const printResult = (vertices, visited) => {
     console.log(visitedNodes.substring(0, visitedNodes.length - 2));
 }
 
-const dfs = (graph, visited, node) => {
-    visited.set(node, true);
-    console.log(`Visiting node ${node}`);
-    for(let i = 0; i < graph[node].length; i++) {
-        if(visited.get(i) === false && graph[node][i] === 1) {
-            dfs(graph, visited, i);
+const stack = require('../../../data-structures/stack.js');
+const dfs = (graph, vertices, node) => {
+    const stack = new Stack();
+    const visited = new Map();
+    stack.push(node);   // push first node
+    while(!stack.isEmpty()) {
+        const currentNode = stack.pop();
+        if(!visited.has(currentNode)) { // if currentNode has not be visited
+            console.log(`Visiting node ${currentNode}`);
+            visited.set(currentNode, true);    // mark node as visited
+            graph[currentNode].forEach((elem, idx) => {
+                // if there is an edge and node hasn't been visited
+                if(!visited.has(idx) && elem === 1) {
+                    stack.push(idx);
+                }
+            });
         }
     }
-}
-
-const dfsRecursive = () => {
-    const visited = new Map();
-    for(let i = 0; i < vertices; i++) {
-        visited.set(i, false);
-    }
-    dfs(graph, visited, 0);  // start on node 0
     printResult(vertices, visited);
 }
 
 console.table(graph);
-dfsRecursive();
+dfs(graph, vertices, 0);

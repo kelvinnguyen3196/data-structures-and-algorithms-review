@@ -1,6 +1,6 @@
 // LIFO - used for DFS
 // similar to a stack of books
-class Stack {
+module.exports = class Stack {
     constructor() {
         this._data = {};
         this._top = null;
@@ -41,7 +41,7 @@ class Stack {
         console.log(stackElements);
     }
 }
-
+/*
 // create stack
 const stack = new Stack();
 // push data
@@ -56,3 +56,4 @@ console.log(`Popped: ${stack.pop()}`);
 // print stack
 console.log(`After popping elements...`);
 stack.print();
+*/
