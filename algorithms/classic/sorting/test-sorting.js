@@ -1,4 +1,10 @@
-module.exports.testSorting = (lists, sortingFunc) => {
+module.exports.testSorting = (sortingFunc) => {
+    const lists = [
+        [4, 3, 1, -1, 0, 50, 10],
+        [1, 0],
+        [6, 5, 4, 3, 2, 1],
+        [1, 2, 3, 4, 5, 6]
+    ];
     lists.forEach((list, idx) => {
         const sorted = [...list].sort((a, b) => a - b); // deep clone with spread
         const mySorted = sortingFunc(list);
