@@ -5,6 +5,7 @@ module.exports.testSorting = (sortingFunc) => {
         [6, 5, 4, 3, 2, 1],
         [1, 2, 3, 4, 5, 6]
     ];
+    let passTotal = 0;
     lists.forEach((list, idx) => {
         const sorted = [...list].sort((a, b) => a - b); // deep clone with spread
         const mySorted = sortingFunc(list);
@@ -16,8 +17,10 @@ module.exports.testSorting = (sortingFunc) => {
                 break;
             }
         }
+        workingSort ? passTotal++ : passTotal;
         console.log(`List ${idx}: ${workingSort ? `PASSED` : `FAILED`}`);
         console.log(`\tBuilt in sort function: ${sorted}`);
         console.log(`\tMy sort function: \t${mySorted}`);
     });
+    console.log(`PASSED: ${passTotal}/${lists.length}`);
 }
