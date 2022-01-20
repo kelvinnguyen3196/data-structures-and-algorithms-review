@@ -8,7 +8,13 @@ module.exports.testSorting = (sortingFunc) => {
     let passTotal = 0;
     lists.forEach((list, idx) => {
         const sorted = [...list].sort((a, b) => a - b); // deep clone with spread
-        const mySorted = sortingFunc(list);
+        let mySorted;
+        if(sortingFunc.name === `mergeSort`) {  // special inputs for mergeSort
+            mySorted = sortingFunc(list, 0, list.length - 1);
+        } 
+        else {
+            mySorted = sortingFunc(list);
+        }
         // verify solution
         let workingSort = true;
         for(let i = 0; i < sorted.length; i++) {
