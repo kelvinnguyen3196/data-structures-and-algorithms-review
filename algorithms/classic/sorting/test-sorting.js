@@ -3,7 +3,8 @@ module.exports.testSorting = (sortingFunc) => {
         [4, 3, 1, -1, 0, 50, 10],
         [1, 0],
         [6, 5, 4, 3, 2, 1],
-        [1, 2, 3, 4, 5, 6]
+        [1, 2, 3, 4, 5, 6],
+        [1, 1, 7, 5, 6, 3, -1]
     ];
     let passTotal = 0;
     lists.forEach((list, idx) => {
