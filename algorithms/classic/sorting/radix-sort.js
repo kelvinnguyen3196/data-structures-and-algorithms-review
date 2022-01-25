@@ -32,12 +32,29 @@ const countingSort = (arr, d) => {
 }
 
 const radixSort = (arr) => {
-    const m = getMax(arr);
-    let arrCopy = [...arr]; // deep clone bc bad practice to modify arguments
-    for(let i = 1; Math.floor(m / i) > 0; i *= 10) {
-        arrCopy = countingSort(arrCopy, i);
+    let negNums = [];
+    let posNums = [];
+    arr.forEach(elem => {
+        elem < 0 ? negNums.splice(0, 0, elem) : posNums.splice(0, 0, elem);
+    });
+    if(negNums.length > 0) {
+        negNums.forEach((elem, idx, arr) => {
+            arr[idx] *= -1;
+        });
+        const min = getMax(negNums);
+        for(let i = 1; Math.floor(min / i) > 0; i *= 10) {
+            negNums = countingSort(negNums, i);
+        }
+        negNums = negNums.reverse();
+        negNums.forEach((elem, idx, arr) => {
+            arr[idx] *= -1;
+        });
     }
-    return arrCopy;
+    const max = getMax(posNums);
+    for(let i = 1; Math.floor(max / i) > 0; i *= 10) {
+        posNums = countingSort(posNums, i);
+    }
+    return negNums.concat(posNums);
 }
 
 const testingSort = require(`./test-sorting.js`);

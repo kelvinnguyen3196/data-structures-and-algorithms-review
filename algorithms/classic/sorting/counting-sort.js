@@ -8,7 +8,7 @@ const countingSort = (arr) => {
     });
     // #endregion
     let negativeOffset = Math.abs(largestNegativeNumber);
-    const countingArr = new Array(100); // large number so it will contain all elements
+    const countingArr = new Array(200); // large number so it will contain all elements
     countingArr.fill(0);    // fill arr with 0's
     // store count of each elem
     arr.forEach((elem, idx) => {
