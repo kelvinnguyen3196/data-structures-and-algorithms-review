@@ -20,7 +20,7 @@ const countingSort = (arr) => {
     }
     // build sorted arr
     const sortedArr = new Array(arr.length);
-    for(let i = 0; i < arr.length; i++) {
+    for(let i = arr.length - 1; i >= 0; i--) {
         sortedArr[countingArr[arr[i] + negativeOffset] - 1] = arr[i];
         countingArr[arr[i] + negativeOffset] -= 1;
     }
