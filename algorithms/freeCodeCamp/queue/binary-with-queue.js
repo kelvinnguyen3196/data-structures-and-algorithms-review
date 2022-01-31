@@ -8,7 +8,8 @@
         // if all elems in queue are 1
             // change all 1 to 0 except queue[0] 
             // enqueue 0
-    // efficient solution (after research)
+    // efficient solution (after research) 
+    // https://www.youtube.com/watch?v=kL9KgvZs4e0
         // enqueue 1
         // loop n times
             // dequeue the first element
