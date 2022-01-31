@@ -1,6 +1,6 @@
 const Node = require('./node.js');
 
-class LinkedList {
+module.exports = class LinkedList {
     _head;
     _tail;
     constructor(head = null) {
@@ -63,24 +63,25 @@ class LinkedList {
     }
 }
 
-// create linked list
-const list = new LinkedList(new Node(3));
-// insert new nodes at end and head
-list.insertAtEnd(new Node(4));
-list.insertAtEnd(new Node(54));
-list.insertAtHead(new Node(23));
-// print list
-console.log(`After inserting nodes...`);
-list.print();
-// search for values
-const searchValue = [3];
-searchValue.forEach((elem) => {
-    list.search(elem) ? console.log(`Found ${elem} in linked list`) : console.log(`Did not find ${elem} in linked list`);
-});
-// delete values
-list.delete(40);
-list.delete(4);
-list.deleteAtHead();
-// print linked list
-console.log(`After deleting nodes...`);
-list.print();
+// 
+// // create linked list
+// const list = new LinkedList(new Node(3));
+// // insert new nodes at end and head
+// list.insertAtEnd(new Node(4));
+// list.insertAtEnd(new Node(54));
+// list.insertAtHead(new Node(23));
+// // print list
+// console.log(`After inserting nodes...`);
+// list.print();
+// // search for values
+// const searchValue = [3];
+// searchValue.forEach((elem) => {
+//     list.search(elem) ? console.log(`Found ${elem} in linked list`) : console.log(`Did not find ${elem} in linked list`);
+// });
+// // delete values
+// list.delete(40);
+// list.delete(4);
+// list.deleteAtHead();
+// // print linked list
+// console.log(`After deleting nodes...`);
+// list.print();
