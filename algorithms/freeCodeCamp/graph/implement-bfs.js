@@ -33,8 +33,8 @@ graph[6][4] = 1;
 */
 
 const printResults = (vertices, visited) => {
-    let allNodes = `All nodes: `;
-    let visitedNodes = `Visited nodes: `;
+    let allNodes = `All nodes: \t`;
+    let visitedNodes = `Visited nodes: \t`;
     for(let i = 0; i < vertices; i++) {
         allNodes += `${i}, `;
         if(visited.get(i) === true) {  // node was visited

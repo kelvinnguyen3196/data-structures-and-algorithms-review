@@ -1,6 +1,6 @@
 const Node = require('./node.js');
 
-class VerticesList {
+module.exports = class VerticesList {
     constructor(length = 0) {
         this._data = new Array(length);
     }
@@ -34,22 +34,22 @@ class VerticesList {
     }
 }
 
-const verticesList = new VerticesList(5);
-/* graph
-    0-1
-    |\
-    2 3
-    |/
-    4
-*/
-verticesList.push(0, new Node(1));
-verticesList.push(0, new Node(2));
-verticesList.push(0, new Node(3));
-verticesList.push(1, new Node(0));
-verticesList.push(2, new Node(0));
-verticesList.push(2, new Node(4));
-verticesList.push(3, new Node(0));
-verticesList.push(3, new Node(4));
-verticesList.push(4, new Node(2));
-verticesList.push(4, new Node(3));
-verticesList.print();
+// const verticesList = new VerticesList(5);
+// /* graph
+//     0-1
+//     |\
+//     2 3
+//     |/
+//     4
+// */
+// verticesList.push(0, new Node(1));
+// verticesList.push(0, new Node(2));
+// verticesList.push(0, new Node(3));
+// verticesList.push(1, new Node(0));
+// verticesList.push(2, new Node(0));
+// verticesList.push(2, new Node(4));
+// verticesList.push(3, new Node(0));
+// verticesList.push(3, new Node(4));
+// verticesList.push(4, new Node(2));
+// verticesList.push(4, new Node(3));
+// verticesList.print();
