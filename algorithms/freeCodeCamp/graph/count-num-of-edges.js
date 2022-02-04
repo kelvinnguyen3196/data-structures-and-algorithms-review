@@ -49,14 +49,16 @@ const solution = (graph, vertices) => {
         visited.set(currNode, true);
         console.log(`Visiting node ${currNode}...`);
         graph[currNode].forEach((edgeExists, neighbor) => {
-            if(edgeExists) {
+            if(edgeExists) {    // as long as edge exists, add to count
                 edgeCount++;
+                // if haven't been visited, visit neighbor
                 if(visited.get(neighbor) === false) {
                     queue.push(neighbor);
                 }
             }
         });
     }
+    // divide by two because undirected graph counts edges twice
     return edgeCount / 2;
 }
 
