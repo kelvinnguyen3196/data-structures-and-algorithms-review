@@ -43,7 +43,7 @@ class MaxHeap {
 
     buildMaxHeap(arr) {
         this.heap = arr;
-        for(let i = (Math.floor(this.heap.length) / 2) - 1; i >= 0; i--) {
+        for(let i = (Math.floor(this.heap.length / 2)) - 1; i >= 0; i--) {
             this.heapifyDown(i);
         }
     }
@@ -90,6 +90,8 @@ console.log(`After building...`);
 console.log(heap.heap);
 console.log(`Inserting 10...`);
 heap.insert(10);
+console.log(`Inserting 8...`);
+heap.insert(8);
 console.log(heap.heap);
 const max = heap.extractMax();
 console.log(`Extracting max: ${max}`);
