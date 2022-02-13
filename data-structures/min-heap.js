@@ -1,4 +1,4 @@
-class MinHeap {
+module.exports = class MinHeap {
     constructor() {
         this.heap = [];
     }
@@ -78,18 +78,18 @@ class MinHeap {
     }
 }
 
-const minHeap = new MinHeap();
-minHeap.buildMinHeap([4, 1, 9, 10, 15, 3]);
-console.log(`After building min heap...`);
-console.log(minHeap.heap);
-console.log(`Inserting 24...`);
-minHeap.insert(24);
-console.log(minHeap.heap);
-console.log(`Inserting 2...`);
-minHeap.insert(2);
-console.log(minHeap.heap);
-console.log(`Extracting min: ${minHeap.extractMin()}`);
-console.log(`Peeking min: ${minHeap.peek()}`);
-console.log(minHeap.heap);
-console.log(`First leaf: ${minHeap.heap[Math.floor(minHeap.heap.length / 2)]}`);
-console.log(`First subtree: ${minHeap.heap[Math.floor(minHeap.heap.length / 2) - 1]}`);
+// const minHeap = new MinHeap();
+// minHeap.buildMinHeap([4, 1, 9, 10, 15, 3]);
+// console.log(`After building min heap...`);
+// console.log(minHeap.heap);
+// console.log(`Inserting 24...`);
+// minHeap.insert(24);
+// console.log(minHeap.heap);
+// console.log(`Inserting 2...`);
+// minHeap.insert(2);
+// console.log(minHeap.heap);
+// console.log(`Extracting min: ${minHeap.extractMin()}`);
+// console.log(`Peeking min: ${minHeap.peek()}`);
+// console.log(minHeap.heap);
+// console.log(`First leaf: ${minHeap.heap[Math.floor(minHeap.heap.length / 2)]}`);
+// console.log(`First subtree: ${minHeap.heap[Math.floor(minHeap.heap.length / 2) - 1]}`);
