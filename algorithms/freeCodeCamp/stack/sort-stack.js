@@ -3,7 +3,7 @@
     // solution 1
         // pop values from a stack and put into binary search tree
         // use inorder traversal to get sorted order
-        // O(n) + O(n log(n)) + O(n) = O(n)
+        // O(n) + O(n log(n)) + O(n) = O(n log(n))
         // popping all elems + inserting into tree + inorder traversal
 
 class Tree {
