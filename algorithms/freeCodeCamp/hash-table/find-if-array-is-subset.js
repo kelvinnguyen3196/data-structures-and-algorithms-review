@@ -10,7 +10,7 @@
             // if element does not exist return false
         // if all elements from arr2 exist in hash table return true
         // O(m + n) runtime where m is the size of arr1 and n is the size of arr2
-        // O(m + n) space
+        // O(m) space
 
 const solution = (arr1, arr2) => {
     const arr1Map = new Map();
